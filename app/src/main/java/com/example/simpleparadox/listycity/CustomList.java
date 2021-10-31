@@ -92,7 +92,13 @@ public class CustomList extends ArrayAdapter<City> {
      * @return
      */
     public int countCity(City city) {
-        return 0;
+        int ret = 0;
+        for (City c : cities) {
+            if (c.getCityName().equals(city.getCityName()) && c.getProvinceName().equals(city.getProvinceName())) {
+                ret += 1;
+            }
+        }
+        return ret;
     }
 
 }
